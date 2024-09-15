@@ -1,0 +1,37 @@
+.scrollRight {
+    position: fixed;
+    right: 15px;
+    bottom: 170px;
+}
+
+.scrollLeft {
+    position: fixed;
+    left: 15px;
+    bottom: 170px;
+}
+
+.profile-details {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.dropdown-menu {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+    border: 0px !important;
+    padding: 0px !important;
+    border-radius: 3px !important;
+  }
+
+  .action-dropdown-btns .p-button.p-component{
+    display: block;
+    text-align: left;
+  }
+
+  .border-none {
+    border: none;
+    background: none;
+  }
+
+  .dropdown-menu {
+    left: -50px !important;
+  }
