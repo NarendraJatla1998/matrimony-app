@@ -39,7 +39,7 @@ body {
 }
 
 .f-600 {
-    font-weight: 600;
+    font-weight: 600 !important;
 }
 
 .color-white {
@@ -81,4 +81,27 @@ body {
 
 .headr-section {
     margin-top: 1rem;
+}
+
+.no-records-found {
+    height: calc(100vh - 200px);;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .pi-times {
+    color: #000000;
+  }
+  .premium-lable {
+    color: #bba0d9;
+  }
+
+  .verified-lable{
+    color: #8295e1;
+  }
+
+.f-13 {
+    font-size: 13px;
 }

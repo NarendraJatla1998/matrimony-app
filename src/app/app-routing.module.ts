@@ -6,6 +6,7 @@ import { ProfilePageComponent } from './components/profile-page/profile-page.com
 
 const routes: Routes = [
   {path:'', component: HomePageComponent},
+  {path:'home', component: HomePageComponent},
   {path:'gesture', component: GesturePageComponent},
   {path:'profile/:id', component: ProfilePageComponent},
   { path: '**', redirectTo: '' }

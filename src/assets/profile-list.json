@@ -18,7 +18,8 @@
         "relegion": "Hindu",
         "income": "7L - 8L",
         "employment": "Privare sector",
-        "country": "India"
+        "country": "India",
+        "images": ["image1","image2","image3","image4"]
     },
     {
         "id": 2,
@@ -39,7 +40,8 @@
         "relegion": "Hindu",
         "income": "4L - 5L",
         "employment": "Privare sector",
-        "country": "India"
+        "country": "India",
+        "images": ["image1","image2","image3","image4"]
     },
     {
         "id": 3,
@@ -60,7 +62,8 @@
         "relegion": "Hindu",
         "income": "10L - 12L",
         "employment": "Privare sector",
-        "country": "India"
+        "country": "India",
+        "images": ["image1","image2","image3","image4","image5"]
     },
     {
         "id": 4,
@@ -81,7 +84,8 @@
         "relegion": "Hindu",
         "income": "7L - 8L",
         "employment": "Privare sector",
-        "country": "India"
+        "country": "India",
+        "images": ["image1","image2","image3","image4","image5"]
     },
     {
         "id": 5,
@@ -102,7 +106,8 @@
         "relegion": "Hindu",
         "income": "13 - 16L",
         "employment": "Privare sector",
-        "country": "India"
+        "country": "India",
+        "images": ["image1","image2","image3","image4","image5"]
     },
     {
         "id": 6,
@@ -123,7 +128,8 @@
         "relegion": "Hindu",
         "income": "7L - 8L",
         "employment": "Privare sector",
-        "country": "India"
+        "country": "India",
+        "images": ["image1","image2","image3","image4","image5"]
     },
     {
         "id": 7,
@@ -144,7 +150,8 @@
         "relegion": "Hindu",
         "income": "10L - 12L",
         "employment": "Privare sector",
-        "country": "India"
+        "country": "India",
+        "images": ["image1","image2"]
     },
     {
         "id": 8,
@@ -165,6 +172,7 @@
         "relegion": "Hindu",
         "income": "10L - 12L",
         "employment": "Privare sector",
-        "country": "India"
+        "country": "India",
+        "images": ["image1","image2","image3"]
     }
 ]

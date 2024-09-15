@@ -1,0 +1,15 @@
+.profile-page-card {
+    margin-top: 3rem !important;
+}
+.slider-content-box {
+    min-height: 390px;
+  }
+
+  ::ng-deep .p-carousel .p-carousel-content .p-carousel-prev,
+::ng-deep .p-carousel .p-carousel-content .p-carousel-next {
+  display: none;
+ }
+
+ .border {
+    border-bottom: 1px solid #000000;
+ }

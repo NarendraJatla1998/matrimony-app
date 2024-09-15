@@ -1,1 +1,85 @@
-<p>profile-page works!</p>
+<div class="col-6 mt-4 mx-4 ">
+    <span class="color-white f-600 p-2"> <i class="pi pi-arrow-left mr-2 cursor-pointer" data-toggle="tooltip" data-placement="top" title="Back to Home screen" (click)="navigateToHome()"></i> Home</span>
+</div>
+
+<div class=" m-5 profile-card profile-page-card ">
+    <div class="container-fluid col-sm-12 col-md-12 px-0">
+        <div class="row m-auto px-0">
+            <div class="col-12 m-auto">
+                <div class="row m-auto">
+                    <div class="d-none d-lg-block col-12 col-lg-3 mb-3 mb-lg-0">
+                        <p-carousel [value]="profileDataById" [autoplayInterval]="3000" [numVisible]="1" [circular]="true">
+                            <ng-template let-slider pTemplate="item">
+                                <div class=" m-2 text-center py-3 px-1">
+                                    <div>
+                                        <img [src]="'../../../assets/'+(profileContent?.name)+'/'+(slider)+'.jpg'" alt="" style="height: 300px; width: 250px;" />
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </p-carousel>
+                    </div>
+                    <div class="col-12 col-lg-8 pb-3 pb-lg-0 mt-3 mt-lg-0">
+                        <div class="row m-auto justify-content-end">
+                            <div class="col-12 col-lg-8 px-0">
+                                <div class="row">
+                                    <div class="col-12 d-flex align-items-center mt-4 mb-2 px-0 mx-0">
+                                        <div class="col-4 d-flex justify-content-start px-0">
+                                            <span class="verified-lable f-600"><i class="pi pi-check"></i> ID Verified</span>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <span class="f-600 ml-2"><i class="pi pi-star"></i> Shortlist</span>
+                                            <span class="f-600 ml-3">
+                                               <i class="pi pi-phone"> Call</i> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-start mb-2 mt-0 mx-0 px-0">
+                                        <h4 class="f-600">{{profileContent?.name}}</h4>
+                                    </div>
+                                    <div class="col-12 px-0">
+                                        <span><i class="pi pi-user mr-2 f-600"></i>{{profileContent?.age}}</span>
+                                    </div>
+                                    <div class="col-12 px-0">
+                                        <span><i class="pi pi-users mr-2 f-600"></i>{{profileContent?.height}}</span>
+                                    </div>
+                                    <div class="col-12 px-0">
+                                        <span><i class="pi pi-briefcase mr-2 f-600"></i>{{profileContent?.employment}}</span>
+                                    </div>
+                                    <div class="col-12 px-0">
+                                        <span><i class="pi pi-map-marker mr-2 f-600"></i>{{profileContent?.area}}</span>
+                                    </div>
+                                    <div class="col-12 px-0">
+                                        <span><i class="pi pi-book mr-2 f-600"></i>{{profileContent?.education}}</span>
+                                    </div>
+                                    <div class="col-12 px-0">
+                                        <span><i class="pi pi-phone mr-2 f-600"></i>{{profileContent?.contact}}</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <span class="f-600">Description:</span>
+                                        </div>
+                                        <p>{{profileContent?.details}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-8 px-0 border">
+                                
+                            </div>
+
+                            <div class="col-12 col-lg-8 px-0">
+                                <div class="row mt-3">
+                                    <span class="f-600">Interested In her ? </span>
+                                        <p-button class="confirmYes ml-2" label="Yes" (onClick)="swipeYes()" />
+                                        <p-button class="confirmNo ml-2" label="No" (onClick)="swipeNo()" />
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,33 +1,44 @@
-<div class="headr-section col-12 row p-4">
+<div class="headr-section col-12 row p-4 mb-3">
     <div class="col-12 d-flex justify-content-center pl-4 color-white f-600">
-
-        <span> <i class="pi pi-arrow-left"></i> Daily Recommendations</span>
+        <span> <i class="pi pi-arrow-left mr-2 cursor-pointer" data-toggle="tooltip" data-placement="top" title="Back to Home screen" (click)="navigateToHome()"></i> Daily Recommendations</span>
     </div>
 </div>
 
 <div class="col-12 m-auto d-flex justify-content-center profile-details">
-    <div class="col-3 profile-card m-2 p-0" *ngFor="let profile of profilesData; let i = index"
+    <div class="col-3 col-lg-3 col-md-4 profile-card m-2 p-0" *ngFor="let profile of profilesData; let i = index"
         [style.display]="i === 0 ? 'block' : 'none'">
         <mat-card>
             <img class="user-profile-image" [src]="'../../../assets/'+(profile.name)+'/'+(profile?.image)+'.jpg'"
                 [alt]="profile.name" />
-            <mat-card-content>
+                <div class="row col-12 profile-details-card f-600 m-1">
+                    <span class="pl-2 verified-lable"> <i class="pi pi-check"></i> Verified</span>
+                    <span class="pl-2 premium-lable"><i class="pi pi-star"></i> Premium NRI</span>
+                </div>
+                
+            <mat-card-content class="m-2">
                 <h5 class="profile-name">{{profile.name}}</h5>
                 <div class="col-12 m-auto p-0 d-flex justify-content-between">
                     <span class="profile-details-card ">{{getData(profile)}}</span>
                 </div>
             </mat-card-content>
-            <mat-card-footer>
-                <div class="col-12 row mt-2">
-                    <div class="col-3 d-flex align-items-center">
-                        <p-button class="confirmYes" label="Yes" (onClick)="swipeYes(profile?.id)" />
+            <mat-card-footer class="mat-footer-card d-flex justify-content-between">
+                <div class="col-12 row m-auto p-0">
+                    <div class="col-6 mt-2 col-md-4">
+                        <span class="f-13"><i class="pi pi-star"></i> Shortlist</span>
                     </div>
-                    <div class="col-3">
-                        <p-button class="confirmNo" label="No" (onClick)="swipeNo(profile?.id)" />
+              
+                    <div class="col-6 p-0 mt-2 col-md-8 d-flex justify-content-end">
+                        <span class="f-600">Like her?</span>
+                        <p-button class="confirmNo" icon="pi pi-times" (onClick)="swipeNo(profile?.id)" />
+                        <p-button class="confirmYes mr-2 ml-2" icon="pi pi-check" (onClick)="swipeYes(profile?.id)" />
                     </div>
-
                 </div>
             </mat-card-footer>
         </mat-card>
+    </div>
+
+    <div *ngIf="profilesData?.length === 0">
+        <img class="no-records-found" src="../../../assets/no-data.avif" alt="No Data Found"/>
+
     </div>
 </div>

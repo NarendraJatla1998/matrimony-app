@@ -1,15 +1,17 @@
-import { Component, OnInit,  ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/services/storage.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gesture-page',
   templateUrl: './gesture-page.component.html',
   styleUrls: ['./gesture-page.component.css']
 })
-export class GesturePageComponent {
+export class GesturePageComponent implements OnInit {
   constructor(private profileService: StorageService,
-    private toast: ToastrService
+    private toast: ToastrService, 
+    private router: Router
   ) {}
 
   public profilesData: any;
@@ -52,5 +54,9 @@ export class GesturePageComponent {
   removeProfile(id: number) {
     this.profilesData = this.profilesData.filter((p: any) => p.id !== id);
     localStorage.setItem('profiles', JSON.stringify(this.profilesData));
+  }
+
+  navigateToHome() {
+    this.router.navigate(['/home'])
   }
 }

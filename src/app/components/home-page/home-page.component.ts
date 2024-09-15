@@ -1,6 +1,7 @@
 import { Component, OnInit,  ElementRef, ViewChild } from '@angular/core';
 import { StorageService } from 'src/app/services/storage.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -9,8 +10,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private profileService: StorageService,
-    private toast: ToastrService
+  constructor(
+    private profileService: StorageService,
+    private toast: ToastrService,
+    private router: Router
   ) {}
 
   @ViewChild('scrollContainer', { read: ElementRef }) scrollContainer!: ElementRef;
@@ -66,5 +69,9 @@ export class HomePageComponent implements OnInit {
   removeProfile(id: number) {
     this.profilesData = this.profilesData.filter((p: any) => p.id !== id);
     localStorage.setItem('profiles', JSON.stringify(this.profilesData));
+  }
+
+  navigateToProfileDetails(id: number) {
+    this.router.navigate([`profile/${id}`]);
   }
 }

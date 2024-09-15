@@ -1,12 +1,15 @@
-.card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+  .images-span {
+    position: absolute;
+    left: 331px;
+    color: #ffffffbd;
+    bottom: 175px;
   }
+
   
-  .card {
-    width: 300px;
-    margin-bottom: 20px;
+  .mat-footer-card {
+    border-top: 1px solid #5e5e5e33;
   }
-  
+
+  .profile-card {
+    box-shadow: #f7fcfb 0px -5px, #f7fcfb 0px -10px, #f7fdfb3d 0px -15px, #f7fdfb9e 0px -22px, #f7fdfb57 0px -32px !important;
+  }

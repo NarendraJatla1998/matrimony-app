@@ -14,14 +14,14 @@
     </div>
 </div>
 <div class="color-white f-600 col-6 d-flex pl-4">
-    <span>{{profilesData?.length}} Profiles pending with Me</span>
+    <span>{{profilesData?.length}} Profiles pending with Me <span class="new-rec-lable p-1">5 New</span></span>
 </div>
 
 <div class="col-12 m-auto d-flex justify-content-start profile-details" #scrollContainer>
     <div class="col-3 profile-card m-2 p-0" *ngFor="let profile of profilesData">
         <mat-card>
             <img class="user-profile-image" [src]="'../../../assets/'+(profile.name)+'/'+(profile?.image)+'.jpg'"
-                [alt]="profile.name" />
+                [alt]="profile.name" (click)="navigateToProfileDetails(profile?.id)" />
             <mat-card-content>
                 <h5 class="profile-name">{{profile.name}}</h5>
                 <div class="col-12 m-auto p-0 d-flex justify-content-between">
@@ -30,10 +30,10 @@
             </mat-card-content>
             <mat-card-footer>
                 <div class="col-12 row mt-2">
-                    <div class="col-3 d-flex align-items-center">
+                    <div class="col-3 col-lg-3 col-md-6 d-flex align-items-center">
                         <p-button class="confirmYes" label="Yes" (onClick)="swipeYes(profile?.id)" />
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 col-lg-3 col-md-6">
                         <p-button class="confirmNo" label="No" (onClick)="swipeNo(profile?.id)" />
                     </div>
 
@@ -41,8 +41,14 @@
             </mat-card-footer>
         </mat-card>
     </div>
+
+    <div class="col-12 d-flex justify-content-center" *ngIf="profilesData?.length === 0">
+        <img class="no-records-found" src="../../../assets/no-data.avif" alt="No Data Found"/>
+
+    </div>
 </div>
 
-<p-button pTooltip="Scroll To Left" class="scrollButton scrollLeft" icon="pi pi-angle-left" (click)="scrollLeft()" />
-<p-button pTooltip="Scroll To Right" class="scrollButton scrollRight" (click)="scrollRight()"
+
+<p-button data-toggle="tooltip" data-placement="left" title="Scroll To Left" class="scrollButton scrollLeft" icon="pi pi-angle-left" (click)="scrollLeft()" />
+<p-button data-toggle="tooltip" data-placement="right" title="Scroll To Right" class="scrollButton scrollRight" (click)="scrollRight()"
     icon="pi pi-angle-right" />
