@@ -22,7 +22,7 @@
         <mat-card>
             <img class="user-profile-image" [src]="'../../../assets/'+(profile.name)+'/'+(profile?.image)+'.jpg'"
                 [alt]="profile.name" (click)="navigateToProfileDetails(profile?.id)" />
-            <mat-card-content>
+            <mat-card-content class="cursor-pointer" (click)="navigateToProfileDetails(profile?.id)" >
                 <h5 class="profile-name">{{profile.name}}</h5>
                 <div class="col-12 m-auto p-0 d-flex justify-content-between">
                     <span class="profile-details-card ">{{getData(profile)}}</span>
